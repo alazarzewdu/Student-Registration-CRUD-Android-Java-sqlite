@@ -34,8 +34,6 @@ public class Home extends AppCompatActivity {
 
         badd = findViewById(R.id.btn_add);
         bdisplay = findViewById(R.id.btn_display);
-        bedit = findViewById(R.id.btn_edit);
-        bdelete = findViewById(R.id.btn_delete);
 
 
 
@@ -43,12 +41,64 @@ public class Home extends AppCompatActivity {
         badd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                insert();
+            }
+        });
+
+        bdisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getApplicationContext(),view.class);
+                startActivity(i);
+
             }
         });
 
 
 
+    }
+
+
+
+    public void insert () {
+        try {
+            String id = eid.getText().toString();
+            String fname = efname.getText().toString();
+            String lname = elname.getText().toString();
+            String age = eage.getText().toString();
+            String department = edepartment.getText().toString();
+            String section = esection.getText().toString();
+
+
+            SQLiteDatabase db = openOrCreateDatabase("unity", Context.MODE_PRIVATE, null);
+            db.execSQL("Create Table If Not Exists student(id Text PRIMARY KEY, fname Text, lname Text, age Text, department Text, section Text)");
+
+            String sql = "Insert Into student(id,fname,lname,age,department,section)values(?,?,?,?,?,?)";
+            SQLiteStatement statement = db.compileStatement(sql);
+            statement.bindString(1,id);
+            statement.bindString(2,fname);
+            statement.bindString(3,lname);
+            statement.bindString(4,age);
+            statement.bindString(5,department);
+            statement.bindString(6,section);
+            statement.execute();
+            Toast.makeText(this, "Record Added", Toast.LENGTH_SHORT).show();
+
+            eid.setText("");
+            efname.setText("");
+            elname.setText("");
+            eage.setText("");
+            edepartment.setText("");
+            esection.setText("");
+            eid.requestFocus();
+
+
+        }
+        catch (Exception ex)
+        {
+            Toast.makeText(this, "Record Failed", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

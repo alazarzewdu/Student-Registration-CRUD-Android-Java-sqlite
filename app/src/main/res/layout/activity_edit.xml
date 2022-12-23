@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".edit">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
             android:layout_toRightOf="@id/st_id"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-           android:hint="Id">
+            android:hint="Id">
         </EditText>
 
 
@@ -146,42 +146,44 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
 
+
+
+
+
         <Button
-            android:id="@+id/btn_add"
+            android:id="@+id/btn_edit"
             android:layout_marginTop="300dp"
+            android:layout_below="@id/btn_display"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"
+            android:text="Update"
             tools:ignore="NotSibling">
 
         </Button>
 
         <Button
-            android:id="@+id/btn_display"
-            android:layout_below="@id/btn_add"
+            android:id="@+id/btn_delete"
+            android:layout_below="@id/btn_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Display"
+            android:text="Delete"
+            tools:ignore="NotSibling">
+
+        </Button>
+
+        <Button
+            android:layout_marginTop="45dp"
+            android:id="@+id/btn_main"
+            android:layout_below="@id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Main"
             tools:ignore="NotSibling">
 
         </Button>
 
 
-
-
-
-        <Button
-            android:id="@+id/btn_search"
-            android:layout_marginTop="550dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="search">
-
-        </Button>
 
     </RelativeLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

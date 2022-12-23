@@ -13,6 +13,20 @@
         android:theme="@style/Theme.StudentRegistration"
         tools:targetApi="31">
         <activity
+            android:name=".edit"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Home"
             android:exported="false">
             <meta-data
