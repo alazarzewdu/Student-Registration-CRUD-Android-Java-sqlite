@@ -40,12 +40,12 @@ public class Home extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        String t1 = i.getStringExtra("id");
-        String t2 = i.getStringExtra("fname");
-        String t3 = i.getStringExtra("lname");
-        String t4 = i.getStringExtra("age");
-        String t5 = i.getStringExtra("department");
-        String t6 = i.getStringExtra("section");
+        String t1 = i.getStringExtra("id").toString();
+        String t2 = i.getStringExtra("fname".toString());
+        String t3 = i.getStringExtra("lname").toString();
+        String t4 = i.getStringExtra("age").toString();
+        String t5 = i.getStringExtra("department").toString();
+        String t6 = i.getStringExtra("section").toString();
 
 
         eid.setText(t1);
@@ -93,7 +93,7 @@ public class Home extends AppCompatActivity {
         bdelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                delete();
             }
         });
 
@@ -155,9 +155,9 @@ public class Home extends AppCompatActivity {
             String section = esection.getText().toString();
 
 
-            SQLiteDatabase db = openOrCreateDatabase("unity", Context.MODE_PRIVATE, null);
+            SQLiteDatabase db = openOrCreateDatabase("unity",Context.MODE_PRIVATE,null);
 
-            String sql = "UPDATE student set fname=?, lname=?, age=?, department=?, section=? WHERE id=?";
+            String sql = "update student set fname=?,lname=?,age=?,department=?,section=? where id=?";
             SQLiteStatement statement = db.compileStatement(sql);
             statement.bindString(1,id);
             statement.bindString(2,fname);
@@ -180,6 +180,40 @@ public class Home extends AppCompatActivity {
         }
         catch (Exception ex) {
             Toast.makeText(this, "Failed Updating", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+
+    //delete
+
+
+
+    public void delete() {
+        try {
+            String id = eid.getText().toString();
+
+
+            SQLiteDatabase db = openOrCreateDatabase("unity", Context.MODE_PRIVATE, null);
+
+            String sql = "DELETE FROM student WHERE id = ?";
+            SQLiteStatement statement = db.compileStatement(sql);
+            statement.bindString(1,id);
+            statement.execute();
+            Toast.makeText(this, "Record Deleted", Toast.LENGTH_SHORT).show();
+
+            eid.setText("");
+            efname.setText("");
+            elname.setText("");
+            eage.setText("");
+            edepartment.setText("");
+            esection.setText("");
+            eid.requestFocus();
+
+
+        }
+        catch (Exception ex) {
+            Toast.makeText(this, "Failed Deleting", Toast.LENGTH_SHORT).show();
 
         }
     }

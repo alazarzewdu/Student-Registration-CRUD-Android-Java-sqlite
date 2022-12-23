@@ -4,7 +4,7 @@ public class student {
     String id;
     String fname;
     String lname;
-    Integer age;
+    String age;
     String department;
     String section;
     String titles;

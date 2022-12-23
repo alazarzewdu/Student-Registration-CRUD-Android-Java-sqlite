@@ -93,6 +93,7 @@
         <EditText
             android:id="@+id/st_agee"
             android:layout_marginTop="120dp"
+            android:inputType="number"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/st_id"
             android:layout_width="100dp"
@@ -170,7 +171,7 @@
             android:layout_below="@id/btn_display"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit"
+            android:text="Update"
             tools:ignore="NotSibling">
 
         </Button>

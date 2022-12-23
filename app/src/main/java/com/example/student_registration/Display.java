@@ -31,7 +31,7 @@ public class Display extends AppCompatActivity {
         SQLiteDatabase db = openOrCreateDatabase("unity", Context.MODE_PRIVATE, null);
 
         list_view = findViewById(R.id.list_view);
-        final Cursor c = db.rawQuery("  select * from student", null);
+        final Cursor c = db.rawQuery("select * from student", null);
         int id = c.getColumnIndex("id");
         int fname = c.getColumnIndex("fname");
         int lname = c.getColumnIndex("lname");
@@ -53,7 +53,7 @@ public class Display extends AppCompatActivity {
                 stu.id=c.getString(id);
                 stu.fname=c.getString(fname);
                 stu.lname=c.getString(lname);
-                stu.age=c.getInt(age);
+                stu.age=c.getString(age);
                 stu.department=c.getString(department);
                 stu.section=c.getString(section);
 
@@ -70,7 +70,7 @@ public class Display extends AppCompatActivity {
         list_view.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String aa = titles.get(position).toString();
 
                 student stu = stud.get(position);
