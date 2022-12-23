@@ -113,6 +113,8 @@ public class Home extends AppCompatActivity {
         catch (Exception ex)
         {
             Toast.makeText(this, "Record Failed", Toast.LENGTH_SHORT).show();
+           
+
         }
 
 

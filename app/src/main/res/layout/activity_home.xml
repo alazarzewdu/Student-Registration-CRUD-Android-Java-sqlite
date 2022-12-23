@@ -30,7 +30,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:paddingTop="150dp"
+        android:paddingTop="135dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -220,7 +220,7 @@
             android:layout_height="40dp"
             android:background="@drawable/custom_button"
             android:textColor="@color/white"
-            android:text="search">
+            android:text="Delete all">
 
         </Button>
 
