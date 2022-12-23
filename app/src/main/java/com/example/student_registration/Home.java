@@ -6,17 +6,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
 
     EditText eid,efname,elname,eage,edepartment,esection;
     Button badd,bdisplay,bedit,bdelete;
+    TextView dev;
 
 
     @Override
@@ -35,7 +38,19 @@ public class Home extends AppCompatActivity {
         badd = findViewById(R.id.btn_add);
         bdisplay = findViewById(R.id.btn_display);
 
+        dev = findViewById(R.id.dev);
 
+
+
+        dev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dev = new Intent(Intent.ACTION_VIEW);
+                dev.setData(Uri.parse("https://github.com/alazarzewdu"));
+                startActivity(dev);
+
+            }
+        });
 
 
         badd.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +114,15 @@ public class Home extends AppCompatActivity {
         {
             Toast.makeText(this, "Record Failed", Toast.LENGTH_SHORT).show();
         }
+
+
     }
+
+
+
+
+
+
 
 
 
