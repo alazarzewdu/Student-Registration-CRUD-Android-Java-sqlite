@@ -33,7 +33,7 @@ public class edit extends AppCompatActivity {
 
         bedit = findViewById(R.id.btn_edit);
         bdelete = findViewById(R.id.btn_delete);
-        bmain = findViewById(R.id.btn_main);
+       // bmain = findViewById(R.id.btn_main);
 
 
         Intent it = getIntent();
@@ -54,19 +54,21 @@ public class edit extends AppCompatActivity {
         esection.setText(t6);
 
 
-        bmain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),Home.class);
-                startActivity(i);
-            }
-        });
+//        bmain.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(),Home.class);
+//                startActivity(i);
+//            }
+//        });
 
 
         bedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 edit();
+                Intent i = new Intent(getApplicationContext(),Home.class);
+                startActivity(i);
             }
         });
 
