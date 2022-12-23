@@ -3,6 +3,7 @@ package com.example.student_registration;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -69,9 +70,22 @@ public class Display extends AppCompatActivity {
         list_view.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 String aa = titles.get(position).toString();
-                Toast.makeText(getApplicationContext(),aa,Toast.LENGTH_SHORT).show();
+
+                student stu = stud.get(position);
+                Intent i = new Intent(getApplicationContext(), Home.class);
+
+                i.putExtra("id",stu.id);
+                i.putExtra("fname",stu.fname);
+                i.putExtra("lname",stu.lname);
+                i.putExtra("age",stu.age);
+                i.putExtra("department",stu.department);
+                i.putExtra("section",stu.section);
+                startActivity(i);
+
+
+
             }
         });
 

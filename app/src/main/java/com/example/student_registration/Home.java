@@ -38,6 +38,33 @@ public class Home extends AppCompatActivity {
         bdelete = findViewById(R.id.btn_delete);
 
 
+        Intent i = getIntent();
+
+        String t1 = i.getStringExtra("id");
+        String t2 = i.getStringExtra("fname");
+        String t3 = i.getStringExtra("lname");
+        String t4 = i.getStringExtra("age");
+        String t5 = i.getStringExtra("department");
+        String t6 = i.getStringExtra("section");
+
+
+        eid.setText(t1);
+        efname.setText(t2);
+        elname.setText(t3);
+        eage.setText(t4);
+        edepartment.setText(t5);
+        esection.setText(t6);
+
+
+
+
+
+
+
+
+
+
+
         badd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +85,7 @@ public class Home extends AppCompatActivity {
         bedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                edit();
             }
         });
 
@@ -139,10 +166,10 @@ public class Home extends AppCompatActivity {
             statement.bindString(5,department);
             statement.bindString(6,section);
             statement.execute();
-            Toast.makeText(this, "Record Edited", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Record Updated", Toast.LENGTH_SHORT).show();
 
             eid.setText("");
-            efname.setText(""); 
+            efname.setText("");
             elname.setText("");
             eage.setText("");
             edepartment.setText("");
@@ -152,7 +179,7 @@ public class Home extends AppCompatActivity {
 
         }
         catch (Exception ex) {
-            Toast.makeText(this, "Failed Registration", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Failed Updating", Toast.LENGTH_SHORT).show();
 
         }
     }
