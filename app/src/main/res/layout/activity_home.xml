@@ -156,11 +156,31 @@
         </Button>
 
         <Button
-            android:id="@+id/btn_view"
+            android:id="@+id/btn_display"
             android:layout_below="@id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Display"
+            tools:ignore="NotSibling">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_below="@id/btn_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            tools:ignore="NotSibling">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_below="@id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
             tools:ignore="NotSibling">
 
         </Button>
