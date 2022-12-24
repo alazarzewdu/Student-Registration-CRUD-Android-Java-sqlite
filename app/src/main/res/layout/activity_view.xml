@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2"
     tools:context=".view">
 
     <RelativeLayout
@@ -13,12 +12,24 @@
         tools:ignore="MissingConstraints">
 
         <ListView
+
+            android:divider = "@color/black"
+            android:dividerHeight = "1dp"
+            android:footerDividersEnabled = "false"
+            android:headerDividersEnabled = "false"
             android:layout_marginTop="45dp"
             android:id="@+id/lst1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         </ListView>
+
+
+
+
+
+
+
 
     </RelativeLayout>
 

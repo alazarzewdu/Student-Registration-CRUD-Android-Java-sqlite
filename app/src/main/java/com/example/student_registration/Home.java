@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class Home extends AppCompatActivity {
 
     EditText eid,efname,elname,eage,edepartment,esection;
-    Button badd,bdisplay,bedit,bdelete;
+    Button badd,bdisplay,bedit,bdelete,bdeleteall;
     TextView dev;
 
 
@@ -37,6 +37,7 @@ public class Home extends AppCompatActivity {
 
         badd = findViewById(R.id.btn_add);
         bdisplay = findViewById(R.id.btn_display);
+        bdeleteall = findViewById(R.id.btn_deleteall);
 
         dev = findViewById(R.id.dev);
 
@@ -69,6 +70,16 @@ public class Home extends AppCompatActivity {
 
             }
         });
+
+        bdeleteall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteall();
+            }
+        });
+
+
+
 
 
 
@@ -113,11 +124,48 @@ public class Home extends AppCompatActivity {
         catch (Exception ex)
         {
             Toast.makeText(this, "Record Failed", Toast.LENGTH_SHORT).show();
-           
+
 
         }
 
 
+    }
+
+
+
+
+
+    public void deleteall () {
+        try {
+
+
+            String id = eid.getText().toString();
+
+
+            SQLiteDatabase db = openOrCreateDatabase("unity", Context.MODE_PRIVATE, null);
+
+            String sql = "delete from student where id=?";
+            SQLiteStatement statement = db.compileStatement(sql);
+            statement.bindString(1,id);
+            statement.execute();
+            Toast.makeText(this, "Record Deleted", Toast.LENGTH_SHORT).show();
+
+            eid.setText("");
+            efname.setText("");
+            elname.setText("");
+            eage.setText("");
+            edepartment.setText("");
+            esection.setText("");
+            eid.requestFocus();
+            Intent i = new Intent(getApplicationContext(),Home.class);
+            startActivity(i);
+
+
+        }
+        catch (Exception ex)
+        {
+            Toast.makeText(this, "Failed to Delete", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

@@ -40,7 +40,7 @@ public class view extends AppCompatActivity {
         int section = c.getColumnIndex("section");
         titles.clear();
 
-        arrayAdapter = new ArrayAdapter(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,titles);
+        arrayAdapter = new ArrayAdapter(this, R.layout.listview,titles);
         lst1.setAdapter(arrayAdapter);
 
         final ArrayList<student> stud = new ArrayList<student>();
