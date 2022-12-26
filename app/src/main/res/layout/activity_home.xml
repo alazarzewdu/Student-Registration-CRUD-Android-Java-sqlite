@@ -48,6 +48,7 @@
             android:layout_marginBottom="10dp"
             android:background="#50ffffff"
             android:hint="Id"
+            android:textAllCaps="true"
             android:padding="15dp"
             android:textColor="@color/white"
             android:drawableLeft="@drawable/id2_24"
@@ -66,7 +67,7 @@
             android:drawableLeft="@drawable/person"
             android:drawablePadding="20dp"
             android:textColorHint="@color/white"
-
+            android:textAllCaps="true"
             android:layout_marginTop="70dp"
             android:layout_marginLeft="70dp"
             android:layout_width="match_parent"
@@ -86,7 +87,7 @@
             android:drawableLeft="@drawable/person"
             android:drawablePadding="20dp"
             android:textColorHint="@color/white"
-
+            android:textAllCaps="true"
             android:layout_marginTop="130dp"
             android:layout_marginLeft="70dp"
             android:layout_width="match_parent"
@@ -128,6 +129,7 @@
             android:drawablePadding="20dp"
             android:textColorHint="@color/white"
             android:layout_marginTop="250dp"
+            android:textAllCaps="true"
             android:layout_marginLeft="70dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -147,7 +149,7 @@
             android:textColorHint="@color/white"
             android:layout_marginTop="310dp"
             android:layout_marginLeft="70dp"
-
+            android:textAllCaps="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Section">
@@ -202,7 +204,6 @@
             android:id="@+id/btn_search"
             android:layout_marginTop="530dp"
             android:layout_marginLeft="30dp"
-
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@drawable/custom_button"

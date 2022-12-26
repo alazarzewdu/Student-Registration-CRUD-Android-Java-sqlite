@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".search">
+
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       tools:ignore="MissingConstraints">
+
+       <EditText
+           android:id="@+id/s_field"
+           android:layout_marginLeft="5dp"
+           android:layout_width="280dp"
+           android:layout_height="wrap_content">
+       </EditText>
+
+       <Button
+           android:id="@+id/s_btn"
+           android:layout_marginLeft="290dp"
+           android:layout_width="94dp"
+           android:layout_height="50dp"
+           android:text="Search">
+
+       </Button>
+
+       <ListView
+           android:id="@+id/s_list"
+           android:layout_marginTop="120dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+
+       </ListView>
+
+
+
+   </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

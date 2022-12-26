@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class Home extends AppCompatActivity {
 
     EditText eid,efname,elname,eage,edepartment,esection;
-    Button badd,bdisplay,bedit,bdelete,bdeleteall;
+    Button badd,bdisplay,bedit,bdelete,bdeleteall,btnsearch;
     TextView dev;
 
 
@@ -38,6 +38,7 @@ public class Home extends AppCompatActivity {
         badd = findViewById(R.id.btn_add);
         bdisplay = findViewById(R.id.btn_display);
         bdeleteall = findViewById(R.id.btn_deleteall);
+        btnsearch = findViewById(R.id.btn_search);
 
         dev = findViewById(R.id.dev);
 
@@ -75,6 +76,15 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 deleteall();
+            }
+        });
+
+
+        btnsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),search.class);
+                startActivity(i);
             }
         });
 
@@ -144,9 +154,8 @@ public class Home extends AppCompatActivity {
 
             SQLiteDatabase db = openOrCreateDatabase("unity", Context.MODE_PRIVATE, null);
 
-            String sql = "delete from student where id=?";
+            String sql = "delete from student";
             SQLiteStatement statement = db.compileStatement(sql);
-            statement.bindString(1,id);
             statement.execute();
             Toast.makeText(this, "Record Deleted", Toast.LENGTH_SHORT).show();
 
