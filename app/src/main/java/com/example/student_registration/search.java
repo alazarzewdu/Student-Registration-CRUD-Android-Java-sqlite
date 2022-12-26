@@ -8,16 +8,23 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class search extends AppCompatActivity {
 
     EditText s_field;
     Button s_btn;
+    ListView s_list;
+
+    ArrayList<String> arrayList;
+    ArrayAdapter<String> adapter;
 
 
     @Override
